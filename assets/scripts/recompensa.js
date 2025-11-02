@@ -153,8 +153,8 @@ function popupConfirmarCompra(slot) {
                         </i>`;
     const xp = cardObject.quantoXp();
     const alertaItemDuplicado = `Atenção: você já possui este item. Caso prossiga, ele será convertido em ${xp*10} XP extra.`;
-    const corTextoAlerta = cardObject.foiConvertidoEmXp() ? 'color: red;' : '';
-    const cardDescription = cardObject.foiConvertidoEmXp() ? alertaItemDuplicado : cardObject.qualDescricao();
+    const corTextoAlerta = cardObject.foiDuplicado() ? 'color: red;' : '';
+    const cardDescription = cardObject.foiDuplicado() ? alertaItemDuplicado : cardObject.qualDescricao();
     const cardIcone = cardObject.qualCaminhoIcone();
     const cardPrice = cardObject.pegarCustoFormatado();
 

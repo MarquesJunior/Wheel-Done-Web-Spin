@@ -261,7 +261,7 @@ function criarSlot(pool, slot) {
         foiBloqueado() { return dados?.slots[pool]?.[slot]?.blocked ?? false; }, //Se vir algum dado, desbloquear slot
         foiRevelado() { return dados?.slots[pool]?.[slot]?.revealed; },
         foiComprado() { return dados?.slots[pool]?.[slot]?.claimed; },
-        foiConvertidoEmXp() { return dados?.slots[pool]?.[slot]?.convertedToXp; },
+        foiDuplicado() { return dados?.slots[pool]?.[slot]?.convertedToXp; },
 
         qualCaminhoIcone(relativo = './') {return relativo + (dados?.slots[pool]?.[slot]?.iconPath);},
         qualCaminhoCarta(relativo = './') {return relativo + (dados?.slots[pool]?.[slot]?.cardPath);},
@@ -296,7 +296,7 @@ function criarSlot(pool, slot) {
         },
 
         pegarCustoFormatado() {
-            if (this.foiComprado()) return this.foiConvertidoEmXp ? 'Convertido em XP' : 'Obtido';
+            if (this.foiComprado()) return this.foiDuplicado() ? 'Convertido em XP' : 'Obtido';
             if (this.qualCusto() > 0) return this.qualCusto();
             else return 'Grátis';
         },
