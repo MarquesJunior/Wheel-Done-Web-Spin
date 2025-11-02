@@ -194,6 +194,7 @@ function popupConfirmarCompra(slot) {
             if (sucesso) {
                 Popup.close();
                 aoSelecionar();
+                atualizarInventario();
                 return;
             }
         } catch (err) {
